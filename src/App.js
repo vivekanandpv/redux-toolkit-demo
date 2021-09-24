@@ -33,16 +33,29 @@ function App() {
 
   return (
     <Fragment>
-      <h3>App Component</h3>
-      <hr />
-      <button onClick={changeLanguage}>Change Language</button> <br />
-      <button onClick={toggleTheme}>Change Theme</button> <br />
-      <button onClick={login}>Login</button> <br />
-      <button onClick={logout}>Logout</button>
-      <hr />
-      <Navbar />
-      <Content />
-      <Footer />
+      <div className='container p-5'>
+        <h3>App Component</h3>
+        <hr />
+        <button
+          onClick={changeLanguage}
+          className='btn btn-primary btn-sm mx-2'
+        >
+          Change Language
+        </button>{' '}
+        <button onClick={toggleTheme} className='btn btn-warning btn-sm mx-2'>
+          Change Theme
+        </button>{' '}
+        <button onClick={login} className='btn btn-success btn-sm mx-2'>
+          Login
+        </button>{' '}
+        <button onClick={logout} className='btn btn-danger btn-sm mx-2'>
+          Logout
+        </button>
+        <hr />
+        <Navbar />
+        <Content />
+        <Footer />
+      </div>
     </Fragment>
   );
 }
