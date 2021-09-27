@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { languageSlice } from './store/language-slice';
 import { loginSlice } from './store/login-slice';
 import { themeSlice } from './store/theme-slice';
+import { getUserById } from './store/users-sice';
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +32,10 @@ function App() {
     dispatch(themeSlice.actions.toggle());
   };
 
+  const getUser = () => {
+    dispatch(getUserById(5));
+  };
+
   return (
     <Fragment>
       <div className='container p-5'>
@@ -50,6 +55,9 @@ function App() {
         </button>{' '}
         <button onClick={logout} className='btn btn-danger btn-sm mx-2'>
           Logout
+        </button>
+        <button onClick={getUser} className='btn btn-secondary btn-sm mx-2'>
+          Get User
         </button>
         <hr />
         <Navbar />
