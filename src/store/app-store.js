@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { languageSlice } from './language-slice';
 import { loginSlice } from './login-slice';
 import { themeSlice } from './theme-slice';
+import {myLogger} from "./my-logger";
 
 export const appStore = configureStore({
   reducer: {
@@ -9,4 +10,5 @@ export const appStore = configureStore({
     theme: themeSlice.reducer,
     login: loginSlice.reducer,
   },
+  middleware: [myLogger]
 });
